@@ -1,15 +1,24 @@
 package michael.co.model;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Guess {
     private int number;
-    private Random rnd;
+    private int triesCounter;
 
-    public void setNumber(int down, int up){
-        number = rnd.nextInt(up);
+    public void setNumber(int min, int max){
+        number = ThreadLocalRandom.current().nextInt(min, max + 1);
     }
-    public boolean isCorrect(int number){
-        return this.number == number;
+    public void resetTriesCount(){
+        triesCounter = 0;
+    }
+    public int getTriesCount(){
+        return triesCounter;
+    }
+    public int getNumber(){
+        return number;
+    }
+    public void MakeTry(){
+        triesCounter++;
     }
 }

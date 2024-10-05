@@ -5,97 +5,153 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D5EBB4"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="100dp"
+        android:id="@+id/tvTitleMain"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="400dp"
         android:text="Guess"
         android:textColor="#DB6F6F"
         android:textSize="34sp"
         android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="62dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvTitleMinor"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="100dp"
+        android:id="@+id/tvTitleMinor"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginEnd="135dp"
         android:text="THE NUMBER"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="62dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTitleMain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="153dp" />
+        android:id="@+id/tvRangePointer"
+        android:layout_width="52dp"
+        android:layout_height="23dp"
+        android:text="Range"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etMinimum"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etMinimum"
         android:layout_width="70sp"
         android:layout_height="40sp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="text"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="140dp" />
+        android:gravity="center"
+        android:hint="Low"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etMaximum"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvRangePointer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/etMaximum"
         android:layout_width="70sp"
         android:layout_height="40sp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="text"
-        tools:layout_editor_absoluteX="249dp"
-        tools:layout_editor_absoluteY="140dp" />
+        android:gravity="center"
+        android:hint="High"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etMinimum"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnStart"
         android:layout_width="300sp"
         android:layout_height="40sp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:text="Start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/etYourGuess"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="265dp" />
+        android:gravity="center"
+        android:hint="Your guess"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="300sp"
+        android:id="@+id/btnCheck"
+        android:layout_width="0dp"
         android:layout_height="40sp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
         android:backgroundTint="#A64F4F"
-        android:text="Button"
+        android:enabled="false"
+        android:text="Check"
         android:textColorLink="#000000"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvAppxOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="too big"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="390dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivReactPicture"
         android:layout_width="290sp"
         android:layout_height="290sp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938"
         app:srcCompat="@drawable/happy_face"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="425dp" />
+        tools:srcCompat="@drawable/thinking_face" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
