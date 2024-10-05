@@ -68,9 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     int min = Integer.parseInt(etLow.getText().toString());
                     int max = Integer.parseInt(etHigh.getText().toString());
                     if (min >= 10 && max <= 50){
-                        guessBusinessLogic.setNumber(min, max);
-                        Toast.makeText(getApplicationContext(),guessBusinessLogic.getNumber() + "", LENGTH_LONG).show();
-                        guessBusinessLogic.resetTriesCount();
+                        guessBusinessLogic.setNumber(min, max);                     guessBusinessLogic.resetTriesCount();
                         etYourGuess.setText("");
                         btnCheck.setEnabled(true);
                         ivReactPicture.setImageResource(R.drawable.thinking_face);
