@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     max = repaired[1];
                     if (min >= 10 && max <= 50){
                         guessBusinessLogic.setNumber(min, max);
-                        int x = guessBusinessLogic.getNumber();
+                        // For testing:
+                        //int x = guessBusinessLogic.getNumber();
                         //Toast.makeText(getApplicationContext(), x + "", LENGTH_LONG).show();
                         guessBusinessLogic.setNumber(min, max);                     
                         guessBusinessLogic.resetTriesCount();
