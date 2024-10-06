@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         guessBusinessLogic.setNumber(min, max);
                         int x = guessBusinessLogic.getNumber();
                         //Toast.makeText(getApplicationContext(), x + "", LENGTH_LONG).show();
+                        guessBusinessLogic.setNumber(min, max);                     
                         guessBusinessLogic.resetTriesCount();
                         etYourGuess.setText("");
                         tvAppxOutput.setText("Nothing to show");
