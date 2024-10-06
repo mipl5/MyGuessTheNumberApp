@@ -59,18 +59,26 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeOnClickListeners() {
         btnStart.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 if (etLow.getText().toString().isEmpty() || etHigh.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"One item ain't full", LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Something is missing", LENGTH_LONG).show();
                 }
                 else{
                     int min = Integer.parseInt(etLow.getText().toString());
                     int max = Integer.parseInt(etHigh.getText().toString());
+                    int[] repaired = guessBusinessLogic.repairMinMax(min, max);
+                    min = repaired[0];
+                    max = repaired[1];
                     if (min >= 10 && max <= 50){
+                        guessBusinessLogic.setNumber(min, max);
+                        int x = guessBusinessLogic.getNumber();
+                        //Toast.makeText(getApplicationContext(), x + "", LENGTH_LONG).show();
                         guessBusinessLogic.setNumber(min, max);                     
                         guessBusinessLogic.resetTriesCount();
                         etYourGuess.setText("");
+                        tvAppxOutput.setText("Nothing to show");
                         btnCheck.setEnabled(true);
                         ivReactPicture.setImageResource(R.drawable.thinking_face);
                     }
@@ -82,10 +90,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int num = Integer.parseInt(etYourGuess.getText().toString());
-                int max = Integer.parseInt(etHigh.getText().toString());
+                int max = guessBusinessLogic.getMax();
+                int min = guessBusinessLogic.getMin();
                 if (num > max){
                     Toast.makeText(getApplicationContext(),"too big", LENGTH_LONG).show();
                     tvAppxOutput.setText("too big");
+                    guessBusinessLogic.MakeTry();
+                }
+                else if (num < min){
+                    Toast.makeText(getApplicationContext(),"too small", LENGTH_LONG).show();
+                    tvAppxOutput.setText("too small");
                     guessBusinessLogic.MakeTry();
                 }
                 else{
