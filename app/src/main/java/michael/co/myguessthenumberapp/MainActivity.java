@@ -71,17 +71,12 @@ public class MainActivity extends AppCompatActivity {
                     int[] repaired = guessBusinessLogic.repairMinMax(min, max);
                     min = repaired[0];
                     max = repaired[1];
-                    if (min >= 10 && max <= 50){
-                        guessBusinessLogic.setNumber(min, max);
-                        // For testing:
-                        //int x = guessBusinessLogic.getNumber();
-                        //Toast.makeText(getApplicationContext(), x + "", LENGTH_LONG).show();                  
-                        guessBusinessLogic.resetTriesCount();
-                        etYourGuess.setText("");
-                        tvAppxOutput.setText("Nothing to show");
-                        btnCheck.setEnabled(true);
-                        ivReactPicture.setImageResource(R.drawable.thinking_face);
-                    }
+                    guessBusinessLogic.setNumber(min, max);
+                    guessBusinessLogic.resetTriesCount();
+                    etYourGuess.setText("");
+                    tvAppxOutput.setText("Nothing to show");
+                    btnCheck.setEnabled(true);
+                    ivReactPicture.setImageResource(R.drawable.thinking_face);
                 }
             }
         });
