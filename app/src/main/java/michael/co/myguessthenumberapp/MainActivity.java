@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     tvAppxOutput.setText("Nothing to show");
                     btnCheck.setEnabled(true);
                     ivReactPicture.setImageResource(R.drawable.thinking_face);
+
                 }
             }
         });
