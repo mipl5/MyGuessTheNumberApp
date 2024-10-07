@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Something is missing", LENGTH_LONG).show();
                 }
                 else{
-
                     int min = Integer.parseInt(etLow.getText().toString());
                     int max = Integer.parseInt(etHigh.getText().toString());
                     int[] repaired = guessBusinessLogic.repairMinMax(min, max);
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                     tvAppxOutput.setText("Nothing to show");
                     btnCheck.setEnabled(true);
                     ivReactPicture.setImageResource(R.drawable.thinking_face);
-
                 }
             }
         });
